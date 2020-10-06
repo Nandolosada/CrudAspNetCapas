@@ -1,0 +1,6 @@
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\Entidad\bin\Debug\Entidad.dll
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\Entidad\bin\Debug\Entidad.pdb
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\Entidad\obj\Debug\Entidad.csprojAssemblyReference.cache
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\Entidad\obj\Debug\Entidad.csproj.CoreCompileInputs.cache
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\Entidad\obj\Debug\Entidad.dll
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\Entidad\obj\Debug\Entidad.pdb

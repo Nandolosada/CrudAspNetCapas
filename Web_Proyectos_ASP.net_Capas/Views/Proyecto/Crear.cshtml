@@ -1,0 +1,135 @@
+﻿@model Entidad.Proyecto
+
+@{
+    ViewBag.Title = "Crear";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <form action="@Url.Action("Crear","Proyecto")" method="post" id="frmProyecto">
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <h4>Crear Nuevo Proyecto</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-2"> Nombre del proyecto</label>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="NombreProyecto" name="NombreProyecto"
+                           placeholder="Ingrese Nombre Del Proyecto" />
+                    @Html.ValidationMessageFor(model => model.NombreProyecto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Fecha de inicio</label>
+                <div class="col-md-10">
+                    <input type="date" class="form-control" id="FechaInicio" name="FechaInicio" />
+                    @Html.ValidationMessageFor(model => model.FechaInicio, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-2">Fecha Fin</label>
+                <div class="col-md-10">
+                    <input type="date" class="form-control" id="FechaFin" name="FechaFin" />
+                    @Html.ValidationMessageFor(model => model.FechaFin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Crear Proyecto" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+<div>
+    @Html.ActionLink("Regresar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="https://cdn.jsdelivr.net/npm/gasparesganga-jquery-loading-overlay@2.1.7/dist/loadingoverlay.min.js"></script>
+    <script>
+        $("#frmProyecto").submit(function (event) {
+            event.preventDefault(); //prevent default Action
+
+            var nombre = $("#NombreProyecto").val();
+            var fechaInicio = $("#FechaInicio").val();
+            var fechaFin = $("#FechaFin").val();
+
+            if ($.trim(nombre) == "") {
+                alert("Debe Ingresar el nombre del Proyecto!!!");
+                return;
+            }
+
+            if (fechaInicio == "" || fechaFin == "") {
+                alert("Debe de ingresar la fecha de Inicio y la Fecha Fin!!!");
+                return;
+            }
+
+            if (ValidarFechas(fechaInicio, fechaFin) == false) {             
+                alert("La Fecha Fin no puede ser menor a la fecha de Inicio!!!");
+                return;
+            }
+
+            var post_url = $(this).attr("action"); //Get form Action Result
+            var request_method = $(this).attr("method"); //get Form GET/POST method
+            var form_data = $(this).serializeArray();  //Encode form elements for submission
+            console.log(form_data);
+
+            LoadingOverlayShow("#frmProyecto");
+
+            $.ajax({
+                url: post_url,
+                type: request_method,
+                data: form_data
+            }).done(function (response) {
+                console.log(response);
+                LoadingOverlayHide("#frmProyecto");
+                if (response.ok) {
+                    alert("Proyecto Creado Correctamente");
+                    window.location = response.toRedirect;
+                } else {
+                    alert(response.msg);
+                }
+
+                window.Location = response.toRedirect;
+            }).fail(function (jqHXR, textStatus, errorThrow) {
+                LoadingOverlayHide("#frmProyecto");
+                
+            });
+        });
+
+        function ValidarFechas(dateIni, dateFin) {
+            var _dateIni = new Date(dateIni);
+            var _dateFin = new Date(dateFin);
+
+            if (_dateFin < _dateIni) {                
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+
+        function LoadingOverlayShow(id) {
+            $(id).LoadingOverlayShow("show", {
+                color: "rgba(255,255,255,0.5)",
+                image: "/Content/loading.gif",
+                imageResizeFactor: 0.6,
+                //imageAnimation: "1.5s fadein"
+            });
+        }
+
+        function LoadingOverlayHide(id) {
+            $(id).LoadingOverlay("hide")
+        }
+
+    </script>
+}

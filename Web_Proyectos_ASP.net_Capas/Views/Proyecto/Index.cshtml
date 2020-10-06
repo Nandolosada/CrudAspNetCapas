@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Entidad.Proyecto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Lista de Proyectos </h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Crear",new { },new {@class="btn btn-primary" })
+    <a class="btn btn-primary" href="@Url.Action("Crear","Proyecto")"><i class="glyphicon glyphicon-plus"></i>Crear Nuevo </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <label>Nombre Del Proyecto</label>
+        </th>
+        <th>
+            <label>Fecha de Inicio</label>
+        </th>
+        <th>
+            <label>Fecha Fin</label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>            
+            @item.NombreProyecto
+        </td>
+        <td>
+            @item.FechaInicio.ToShortDateString()
+        </td>
+        <td>
+            @item.FechaFin.ToShortDateString()   
+        </td>
+        <td>
+            <a class="btn btn-primary btn-xs"title="Editar" href="@Url.Action("Editar","Proyecto",new { id= item.ProyectoId})">
+                <i class="glyphicon glyphicon-edit" ></i></a>
+
+            <a class="btn btn-info btn-xs" title="Detalles" href="@Url.Action("Detalles","Proyecto",new { id= item.ProyectoId})">
+                <i class="glyphicon glyphicon-pencil" ></i></a>
+
+            <a class="btn btn-danger btn-xs" title="Eliminar" href="@Url.Action("Eliminar","Proyecto",new { id= item.ProyectoId})">
+                <i class="glyphicon glyphicon-trash" ></i></a>
+     
+        </td>
+    </tr>
+}
+
+</table>

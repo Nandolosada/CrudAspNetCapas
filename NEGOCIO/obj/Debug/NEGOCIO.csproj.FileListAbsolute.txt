@@ -1,0 +1,15 @@
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\NEGOCIO.dll
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\NEGOCIO.pdb
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\Datos.dll
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\Entidad.dll
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\EntityFramework.dll
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\Datos.pdb
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\Datos.dll.config
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\Entidad.pdb
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\EntityFramework.xml
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\bin\Debug\es\EntityFramework.resources.dll
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\obj\Debug\NEGOCIO.csprojAssemblyReference.cache
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\obj\Debug\NEGOCIO.dll
+C:\Users\Nando\source\repos\Web_Proyectos_ASP.net_Capas\NEGOCIO\obj\Debug\NEGOCIO.pdb
